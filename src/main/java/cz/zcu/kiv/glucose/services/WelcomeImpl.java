@@ -1,6 +1,8 @@
 package cz.zcu.kiv.glucose.services;
 
 
+import org.springframework.stereotype.Service;
+
 /***********************************************************************************************************************
  * This file is part of the Glucose project
  * <p>
@@ -23,6 +25,7 @@ package cz.zcu.kiv.glucose.services;
  * <p>
  * WelcomeImpl, 2015/09/16 11:47 petr-jezek
  **********************************************************************************************************************/
+@Service
 public class WelcomeImpl implements Welcome {
 
     public String getWelcomeMsg() {
