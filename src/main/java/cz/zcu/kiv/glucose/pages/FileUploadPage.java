@@ -22,6 +22,7 @@ package cz.zcu.kiv.glucose.pages;
  * <p>
  * FileUploadPage, 2015/09/16 11:47 petr-jezek
  **********************************************************************************************************************/
+
 import cz.zcu.kiv.glucose.services.Converter;
 import jdk.internal.util.xml.impl.Input;
 import org.apache.wicket.PageParameters;
@@ -55,7 +56,7 @@ public class FileUploadPage extends WebPage {
                     try {
                         InputStream stream = uploadedFile.getInputStream();
                         converter.convert(stream);
-
+                        stream.close();
                         info("saved file: " + uploadedFile.getClientFileName());
                     } catch (Exception e) {
                         throw new IllegalStateException(e);
