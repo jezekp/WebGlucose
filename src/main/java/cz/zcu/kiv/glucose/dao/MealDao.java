@@ -1,7 +1,9 @@
-package cz.zcu.kiv.glucose.pages;
+package cz.zcu.kiv.glucose.dao;
+
+import cz.zcu.kiv.glucose.pojo.Meal;
 
 /***********************************************************************************************************************
- * This file is part of the Glucose project
+ * This file is part of the glucose project
  * <p>
  * ==========================================
  * <p>
@@ -20,23 +22,7 @@ package cz.zcu.kiv.glucose.pages;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * SimplePage, 2015/09/16 11:47 petr-jezek
+ * MealDao, 2015/09/17 10:18 petr-jezek
  **********************************************************************************************************************/
-import cz.zcu.kiv.glucose.services.Welcome;
-import org.apache.wicket.PageParameters;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.WebPage;
-import org.apache.wicket.spring.injection.annot.SpringBean;
-
-public class SimplePage extends WebPage {
-
-    @SpringBean
-    private Welcome helloService;
-
-    public SimplePage(final PageParameters parameters) {
-
-        add(new Label("msg", helloService.getWelcomeMsg()));
-
-    }
-
+public interface MealDao extends GenericDao<Meal, Integer> {
 }

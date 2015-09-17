@@ -1,11 +1,11 @@
-package cz.zcu.kiv.glucose;
+package cz.zcu.kiv.glucose.dao;
 
-import cz.zcu.kiv.glucose.pages.FileUploadPage;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import java.io.Serializable;
 
 /***********************************************************************************************************************
- * This file is part of the Glucose project
+ * This file is part of the glucose project
  * <p>
  * ==========================================
  * <p>
@@ -24,22 +24,21 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * WicketApplication, 2015/09/16 11:47 petr-jezek
+ * GenericDao, 2015/09/17 09:53 petr-jezek
  **********************************************************************************************************************/
-public class WicketApplication extends WebApplication {
+public interface GenericDao <T, PK extends Serializable>  {
 
-    @Override
-    public Class<FileUploadPage> getHomePage() {
+    /** Persist the newInstance object into database */
+    PK create(T newInstance);
 
-        return FileUploadPage.class; // return default page
-    }
+    /** Retrieve an object that was previously persisted to the database using
+     *   the indicated id as primary key
+     */
+    T read(PK id);
 
-    @Override
-    protected void init() {
+    /** Save changes made to a persistent object.  */
+    void update(T transientObject);
 
-        super.init();
-        addComponentInstantiationListener(new SpringComponentInjector(this));
-
-    }
-
+    /** Remove an object from persistent storage in the database */
+    void delete(T persistentObject);
 }

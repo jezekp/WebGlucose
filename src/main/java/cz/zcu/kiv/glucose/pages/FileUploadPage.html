@@ -7,8 +7,15 @@
     <title></title>
 </head>
 <body>
-<h1>Wicket + Spring integration example</h1>
 
-<h2 wicket:id="msg"></h2>
+<div wicket:id="feedback"></div>
+<form wicket:id="form">
+    <p>
+
+        <label>Select file :</label>
+        <input wicket:id="fileUpload" type="file"/>
+        <input type="submit" value="Upload"/>
+    </p>
+</form>
 </body>
 </html>

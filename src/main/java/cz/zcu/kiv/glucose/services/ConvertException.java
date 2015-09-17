@@ -1,11 +1,7 @@
-package cz.zcu.kiv.glucose;
-
-import cz.zcu.kiv.glucose.pages.FileUploadPage;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+package cz.zcu.kiv.glucose.services;
 
 /***********************************************************************************************************************
- * This file is part of the Glucose project
+ * This file is part of the glucose project
  * <p>
  * ==========================================
  * <p>
@@ -24,22 +20,11 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * WicketApplication, 2015/09/16 11:47 petr-jezek
+ * ConvertException, 2015/09/17 09:44 petr-jezek
  **********************************************************************************************************************/
-public class WicketApplication extends WebApplication {
+public class ConvertException extends Exception {
 
-    @Override
-    public Class<FileUploadPage> getHomePage() {
-
-        return FileUploadPage.class; // return default page
+    public ConvertException(Exception e) {
+        super(e);
     }
-
-    @Override
-    protected void init() {
-
-        super.init();
-        addComponentInstantiationListener(new SpringComponentInjector(this));
-
-    }
-
 }

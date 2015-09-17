@@ -1,11 +1,9 @@
-package cz.zcu.kiv.glucose;
+package cz.zcu.kiv.glucose.dao;
 
-import cz.zcu.kiv.glucose.pages.FileUploadPage;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import cz.zcu.kiv.glucose.pojo.TimeSegment;
 
 /***********************************************************************************************************************
- * This file is part of the Glucose project
+ * This file is part of the glucose project
  * <p>
  * ==========================================
  * <p>
@@ -24,22 +22,7 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * WicketApplication, 2015/09/16 11:47 petr-jezek
+ * TimeSegmentDao, 2015/09/17 10:12 petr-jezek
  **********************************************************************************************************************/
-public class WicketApplication extends WebApplication {
-
-    @Override
-    public Class<FileUploadPage> getHomePage() {
-
-        return FileUploadPage.class; // return default page
-    }
-
-    @Override
-    protected void init() {
-
-        super.init();
-        addComponentInstantiationListener(new SpringComponentInjector(this));
-
-    }
-
+public interface TimeSegmentDao extends GenericDao<TimeSegment, Integer> {
 }

@@ -1,8 +1,11 @@
-package cz.zcu.kiv.glucose;
+package cz.zcu.kiv.glucose.services;
 
-import cz.zcu.kiv.glucose.pages.FileUploadPage;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+
+import cz.zcu.kiv.glucose.dao.SubjectDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.io.InputStream;
 
 /***********************************************************************************************************************
  * This file is part of the Glucose project
@@ -24,22 +27,13 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * WicketApplication, 2015/09/16 11:47 petr-jezek
+ * WelcomeImpl, 2015/09/16 11:47 petr-jezek
  **********************************************************************************************************************/
-public class WicketApplication extends WebApplication {
+@Service
+public class ConverterImpl implements Converter {
 
-    @Override
-    public Class<FileUploadPage> getHomePage() {
 
-        return FileUploadPage.class; // return default page
+    public void convert(InputStream inputStream) throws ConvertException {
+//TODO -- converter methods and daos invocation goes here
     }
-
-    @Override
-    protected void init() {
-
-        super.init();
-        addComponentInstantiationListener(new SpringComponentInjector(this));
-
-    }
-
 }

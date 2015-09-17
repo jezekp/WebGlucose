@@ -1,7 +1,7 @@
 package cz.zcu.kiv.glucose.services;
 
 
-import org.springframework.stereotype.Service;
+import java.io.InputStream;
 
 /***********************************************************************************************************************
  * This file is part of the Glucose project
@@ -23,12 +23,10 @@ import org.springframework.stereotype.Service;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * WelcomeImpl, 2015/09/16 11:47 petr-jezek
+ * Converter, 2015/09/16 11:47 petr-jezek
  **********************************************************************************************************************/
-@Service
-public class WelcomeImpl implements Welcome {
+public interface Converter {
 
-    public String getWelcomeMsg() {
-        return "Spring : hello world";
-    }
+    public void convert(InputStream inputStream) throws ConvertException;
+
 }

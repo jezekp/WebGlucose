@@ -1,11 +1,11 @@
-package cz.zcu.kiv.glucose;
+package cz.zcu.kiv.glucose.dao;
 
-import cz.zcu.kiv.glucose.pages.FileUploadPage;
-import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import java.io.Serializable;
 
 /***********************************************************************************************************************
- * This file is part of the Glucose project
+ * This file is part of the glucose project
  * <p>
  * ==========================================
  * <p>
@@ -24,22 +24,31 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * WicketApplication, 2015/09/16 11:47 petr-jezek
+ * GenericDaoHibernateImpl, 2015/09/17 09:54 petr-jezek
  **********************************************************************************************************************/
-public class WicketApplication extends WebApplication {
+public class GenericDaoHibernateImpl <T, PK extends Serializable>
+        extends HibernateDaoSupport implements GenericDao<T, PK>{
+    private Class<T> type;
 
-    @Override
-    public Class<FileUploadPage> getHomePage() {
-
-        return FileUploadPage.class; // return default page
+    public GenericDaoHibernateImpl(Class<T> type) {
+        this.type = type;
     }
 
-    @Override
-    protected void init() {
-
-        super.init();
-        addComponentInstantiationListener(new SpringComponentInjector(this));
-
+    public PK create(T o) {
+        return (PK) getSession().save(o);
     }
 
+    public T read(PK id) {
+        return (T) getSession().get(type, id);
+    }
+
+    public void update(T o) {
+        getSession().update(o);
+    }
+
+    public void delete(T o) {
+        getSession().delete(o);
+    }
+
+    // Not showing implementations of getSession() and setSessionFactory()
 }

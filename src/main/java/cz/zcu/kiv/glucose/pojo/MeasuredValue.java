@@ -1,8 +1,7 @@
-package cz.zcu.kiv.glucose.services;
-
+package cz.zcu.kiv.glucose.pojo;
 
 /***********************************************************************************************************************
- * This file is part of the Glucose project
+ * This file is part of the glucose project
  * <p>
  * ==========================================
  * <p>
@@ -21,10 +20,7 @@ package cz.zcu.kiv.glucose.services;
  * <p>
  * **********************************************************************************************************************
  * <p>
- * Welcome, 2015/09/16 11:47 petr-jezek
+ * MeasuredValue, 2015/09/17 10:13 petr-jezek
  **********************************************************************************************************************/
-public interface Welcome {
-
-    String getWelcomeMsg();
-
+public class MeasuredValue {
 }
