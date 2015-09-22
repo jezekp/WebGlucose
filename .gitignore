@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea
 lib
 target
@@ -13,3 +14,66 @@ nb-configuration.xml
 src/main/resources/rebel.xml
 src/main/webapp/META-INF/context.xml
 /logs
+=======
+# Ignore all back-up files...
+*~
+*.bak
+
+#ignore thumbnails created by windows
+Thumbs.db
+
+# Exclude Kdevelop4 files ...
+.kdev*
+
+# Exclude QtCreator and CMake files ...
+CMakeLists.txt.user
+*.pro.user*
+moc*
+*.app*
+*.moc
+*.dylib
+*.so*
+*.dll
+*.lib
+*.a
+*.o
+Makefile*
+ui_*
+qrc_*
+CMakeFiles/*
+
+#Ignore files build by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+*.log
+*.idb
+*.sdf
+[Bb]in
+[Dd]ebug*/
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+
+#Exclude C++  files ...
+*.obj
+*.dep
+
+#ignore pyc files
+*.pyc
+
+#ignore Build directory
+Build/*
+
+
+
+>>>>>>> 668b145ff2b4517db3ce457944f83a179e28501b
