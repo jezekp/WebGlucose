@@ -1,10 +1,11 @@
-<<<<<<< HEAD
+
 .idea
 lib
 target
 *.project
 *.iml
 bin
+classes
 .project
 src/main/webapp/WEB-INF/db.properties
 .classpath
@@ -14,7 +15,6 @@ nb-configuration.xml
 src/main/resources/rebel.xml
 src/main/webapp/META-INF/context.xml
 /logs
-=======
 # Ignore all back-up files...
 *~
 *.bak
@@ -73,7 +73,3 @@ _ReSharper*/
 
 #ignore Build directory
 Build/*
-
-
-
->>>>>>> 668b145ff2b4517db3ce457944f83a179e28501b
